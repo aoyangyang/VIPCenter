@@ -55,6 +55,17 @@ title1 = function (name) {
 
 }
 
+title2 = function (name) {
+    var popBox = document.getElementById("popBox");
+    var popLayer = document.getElementById("popLayer");
+    popBox.style.display = "block";
+    popLayer.style.display = "block";
+
+    let elementById = document.getElementById('popBoxTitle');
+    elementById.innerText = "定制版-" + name;
+
+}
+
 /*点击关闭按钮*/
 my$("aClose").onclick = function () {
     var popBox = document.getElementById("popBox");
