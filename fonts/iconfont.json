@@ -1,0 +1,114 @@
+{
+  "id": "1771715",
+  "name": "VIPCenter",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "76577",
+      "name": "叉子删除带边框",
+      "font_class": "chazishanchudaibiankuang",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "444234",
+      "name": "专辑，光盘",
+      "font_class": "zhuanjiguangpan",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "604651",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "750898",
+      "name": "裤子  ",
+      "font_class": "kuzi",
+      "unicode": "e7b2",
+      "unicode_decimal": 59314
+    },
+    {
+      "icon_id": "1447331",
+      "name": "下载",
+      "font_class": "xiazai1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "2571149",
+      "name": "下载",
+      "font_class": "xiazai2",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "2815743",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5213404",
+      "name": "衣服",
+      "font_class": "yifu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "6322600",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "7140399",
+      "name": "客服",
+      "font_class": "kefu1",
+      "unicode": "e73b",
+      "unicode_decimal": 59195
+    },
+    {
+      "icon_id": "7644409",
+      "name": "左箭头",
+      "font_class": "fanhuizuojiantou",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "7770979",
+      "name": "发夹",
+      "font_class": "fajia",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "8692388",
+      "name": "音乐文件",
+      "font_class": "yinlewenjian",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "9297182",
+      "name": "购物",
+      "font_class": "gouwu",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "13483318",
+      "name": "衣服类型维护",
+      "font_class": "yifuleixingweihu",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    }
+  ]
+}
