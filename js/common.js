@@ -1,7 +1,8 @@
 function my$(id) {
     return document.getElementById(id);
 }
-xuan1 = function(){
+
+xuan1 = function () {
     my$("xuan1").classList.add("focus");
     my$("xuan2").classList.remove("focus");
 
@@ -22,7 +23,7 @@ my$("xuan1").onclick = function () {
     xuan1()
 };
 
-xuan2 = function(){
+xuan2 = function () {
     my$("xuan1").classList.remove("focus");
     my$("xuan2").classList.add("focus");
     var hd = my$("hd");
@@ -43,23 +44,16 @@ my$("xuan2").onclick = function () {
 };
 
 /*点击弹出按钮*/
-test1 = function(name){
+title1 = function (name) {
     var popBox = document.getElementById("popBox");
     var popLayer = document.getElementById("popLayer");
     popBox.style.display = "block";
     popLayer.style.display = "block";
 
     let elementById = document.getElementById('popBoxTitle');
-    elementById.innerText="高级版-"+name;
+    elementById.innerText = "高级版-" + name;
 
 }
-
-/*my$("circle").onclick = function () {
-    var popBox = document.getElementById("popBox");
-    var popLayer = document.getElementById("popLayer");
-    popBox.style.display = "block";
-    popLayer.style.display = "block";
-};*/
 
 /*点击关闭按钮*/
 my$("aClose").onclick = function () {
@@ -69,14 +63,12 @@ my$("aClose").onclick = function () {
     popLayer.style.display = "none";
 };
 
-
-
 //url传参
 var code = getParam("code");
-if (code==2){
-    xuan2()
-}else{
-    xuan1()
+if (code == 2) {
+    xuan2();
+} else {
+    xuan1();
 }
 
 function getParam(paramName) {

@@ -186,18 +186,6 @@ section {
     display: block;
 }
 
-/*定制版的*/
-#box3 .bd .hide li {
-    width: 18%;
-    height: 150px;
-    margin-left: 1%;
-    float: left;
-    margin-right: 1%;
-    margin-bottom: 20px;
-    display: none;
-
-}
-
 /* 圆形 start */
 .bd .circle {
     width: 100px;
