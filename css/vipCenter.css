@@ -3,122 +3,96 @@ body {
 }
 
 /* 头部 start*/
+
 header {
     width: 100%;
     height: 100px;
-    background-color: #fefefe;
-    /* border-bottom: 4px solid #f1f1f1; */
 }
 
-.top-left {
+.header-left {
     width: 10%;
-    float: left;
     padding: 1%;
 }
 
-.top-main {
+.header-main {
     width: 80%;
-    float: left;
 }
 
-.top-main h2 {
+.header-main h2 {
     height: 100px;
     text-align: center;
     font-size: 28px;
     line-height: 100px;
     font-weight: 400;
-    color: #363636;
 }
 
-
-.top-right {
+.header-right {
     width: 10%;
     padding: 1%;
-    float: right;
 }
 
-/* 头部 end*/
-
 /* 引入的图标 start*/
-.top-left .icon-fanhuizuojiantou, .top-right .icon-kefu1 {
-    font-family: 'iconfont', serif;
+
+.header-left .icon-fanhuizuojiantou,
+.header-right .icon-kefu1 {
     font-size: 50px;
     font-style: normal;
-    color: #363636;
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.top-right .icon-kefu1 {
-    float: right;
-}
 /* 引入的图标 end*/
-
+/* 头部 end*/
 /*页面nav start*/
+
 nav {
-    margin-top: 2px;
+    margin-top: 0.8%;
+    margin-bottom: 3%;
     padding: 4%;
-    background-color: #fff;
     text-align: center;
 }
 
 .row {
     height: 300px;
-    display: flex; /*伸缩布局*/
-    border-radius: 5px;
-    /*overflow: hidden;*/
-    margin-bottom: 5px;
-
+    display: flex;
+    /*伸缩布局*/
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .row .a {
+    width: calc(50% - 5px);
     height: 100%;
-    flex: 1;
-    text-align: center;
-    background-color: #f6f6f6;
-    position: relative;
-    margin: 2%;
+    background: #f6f6f6;
     cursor: pointer;
     border: 2px solid #eeeeee;
+    position: relative;
 }
 
-.row .a .b1, .row .a .b2 {
+.row .a .b {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.row .a .b1 h4 {
+.row .a h4 {
     font-size: 36px;
-    /*选中时*/
-    /*color: #fd4d57;*/
     /*未选中时*/
     color: #363636;
 }
 
-.row .a .b1 span {
-    font-size: 18px;
-    /*未被选中时*/
-    color: #bdbdbd;
-    /*选中时*/
-    /*color: #ffa6a7;*/
-}
-
-.row .a .b2 h4 {
-    font-size: 36px;
-    /* 未选中时  */
-    color: #363636;
-}
-
+.row .a .b1 span,
 .row .a .b2 span {
-    font-size: 18px;
-    /*未选中时*/
+    display: inline;
+    font-size: 20px;
+    /*未被选中时*/
     color: #bdbdbd;
 }
 
 /*被点击时*/
+
 #box2 .row .focus {
     border: 2px solid #f6a69a;
     background-color: #fff8f6;
@@ -131,26 +105,25 @@ nav {
 #box2 .row .focus span {
     color: #ffa6a7;
 }
-
 /*页面nav end*/
 
 /* 页面section部分 start */
-section {
-    background-color: #FFF;
-    margin-top: 30px;
-}
-/*高级版*/
+/*切换显示效果*/
+
 #box3 .hd .section-hd {
     width: 336px;
     height: 150px;
-    display: none;
 }
 
 #box3 .hd .show {
     display: block;
 }
 
-#box3 .hd .section-hd h4 {
+#box3 .hd .hide {
+    display: none;
+}
+
+#box3 .hd h4 {
     font-size: 36px;
     color: #363636;
     line-height: 150px;
@@ -158,19 +131,21 @@ section {
     display: inline;
 }
 
-#box3 .hd .section-hd span {
+#box3 .hd span {
     display: inline;
     font-size: 18px;
     color: #9b9b9b;
 }
 
-#box3 .hd .section-hd em {
+#box3 .hd em {
     display: inline;
     font-size: 18px;
     color: #fd4d57;
 }
-/*高级版的*/
-#box3 .bd .show li {
+
+/*高级版显示效果start*/
+
+#box3 .section-bd .show li {
     width: 18%;
     height: 150px;
     margin-left: 1%;
@@ -179,15 +154,17 @@ section {
     margin-bottom: 20px;
 }
 
-#box3 .bd .show li .first {
+#box3 .section-bd .show li .first {
     opacity: 0.4;
     filter: alpha(opacity=40);
     z-index: 9;
     display: block;
 }
 
+/*高级版显示效果end*/
 /* 圆形 start */
-.bd .circle {
+
+.section-bd .circle {
     width: 100px;
     height: 100px;
     margin: 0 auto;
@@ -201,15 +178,16 @@ section {
     cursor: pointer;
 }
 
-.bd .circle:hover {
+.section-bd .circle:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .3);
 }
 
-
-.circle .icon-yinlewenjian, .circle .icon-zhuanjiguangpan {
-    font-family: 'iconfont', serif;
-    /* text-align: center; */
-    color: #fa6d67;
+.circle .icon-yinlewenjian,
+.circle .icon-zhuanjiguangpan,
+.circle .icon-kuzi,
+.circle .icon-gouwu,
+.circle .icon-yifu {
+    color: #fd4d57;
     font-size: 48px;
 }
 
@@ -224,42 +202,44 @@ ul .section-title {
 }
 
 /*背景层*/
-#popLayer {
+
+#box #popLayer {
     display: none;
-    background-color: #B3B3B3;
+    background-color: #b3b3b3;
     position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
+    right: 0;
     z-index: 10;
     -moz-opacity: 0.8;
-    opacity:.80;
-    filter: alpha(opacity=80);/* 只支持IE6、7、8、9 */
+    opacity: .80;
+    filter: alpha(opacity=80);
+    /* 只支持IE6、7、8、9 */
 }
 
 /*弹出层*/
+
 #popBox {
     display: none;
-    background-color: #FFFFFF;
+    background-color: #fff;
     z-index: 11;
     width: 400px;
     height: 400px;
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    margin:auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
 }
+
 #popBox .content {
-    /*margin: 4%;*/
     padding: 8%;
     width: 100%;
     height: 100%;
-    /*background-color: #795da3;*/
-    word-wrap:break-word;
-    word-break:break-all;
+    word-wrap: break-word;
+    word-break: break-all;
     overflow: auto;
 }
 
@@ -270,30 +250,28 @@ ul .section-title {
     font-weight: 400;
     color: #363636;
 }
+
 #popBox .content p {
     padding-top: 8%;
     color: #666666;
     font-size: 20px;
 }
-#popBox .close{
+
+#popBox .close {
     position: absolute;
     top: 120%;
     left: 45%;
 }
+
 /*关闭按钮*/
-#bd .close a {
+
+.close a {
     text-decoration: none;
     color: #2D2C3B;
-    /*display: none;*/
 }
-#bd .close .icon-chazishanchudaibiankuang {
-    font-family: 'iconfont', serif;
-    color: #FFFFFF;
+
+.close .icon-chazishanchudaibiankuang {
+    color: #fff;
 }
+
 /* 页面section部分 end */
-.showNone{
-    display: none;
-}
-.showBlock{
-    display: block;
-}

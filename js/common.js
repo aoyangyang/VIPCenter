@@ -1,70 +1,196 @@
+//封装document.getElememtById
 function my$(id) {
     return document.getElementById(id);
 }
 
-xuan1 = function () {
-    my$("xuan1").classList.add("focus");
-    my$("xuan2").classList.remove("focus");
+//获取一个全局变量dataList
+var dataList = [{
+    title: "高级版",
+    message: "独立摄影师",
+    myClass: "high1",
+    circlesList: [
+        "标题1",
+        "标题3",
+        "标题4",
+        "标题8",
+        "标题10",
+    ]
+},
+    {
+        title: "定制版",
+        message: "小型工作室",
+        myClass: "design1",
+        circlesList: [
+            "标题1",
+            "标题2",
+            "标题3",
+            "标题4",
+            "标题5",
+            "标题6",
+            "标题7",
+            "标题8",
+            "标题9",
+            "标题10",
+        ]
+    }
+]
 
-    var hd = my$("hd");
-    hd.getElementsByClassName("section-hd")[0].style.display = "block";
-    hd.getElementsByClassName("section-hd")[1].style.display = "none";
+function xuan() {
+    //获取id为xuan节点
+    var xuanObj = my$("xuan");
 
-    /*var bd = my$("bd");
-    bd.getElementsByClassName("first")[0].style.display = "block";
-    bd.getElementsByClassName("hide")[0].style.display = "none";*/
-
-    let x1 = my$("xuan1-yuantotot");
-    let x2 = my$("xuan2-yuantotot");
-    x1.className = 'show clearfix showBlock';
-    x2.className = 'show clearfix showNone';
+    let htmllet = "";
+    //获取xuan里面的子节点
+    for (var i = 0; i < dataList.length; i++) {
+        htmllet += '<div class="a '
+        if (i == 0) {
+            htmllet += 'focus';
+        }
+        htmllet += '" id="xuan' + i + '" onclick="swiperColor(' + i + ')"><div class="b"><a href="#"><h4 class="' + dataList[i]["myClass"] + '">' + dataList[i]["title"] + '</h4></a><span class="du' + i + '">适合' + dataList[i]["message"] + '</span></div></div>';
+    }
+    xuanObj.innerHTML = htmllet;
 }
-my$("xuan1").onclick = function () {
-    xuan1()
-};
 
-xuan2 = function () {
-    my$("xuan1").classList.remove("focus");
-    my$("xuan2").classList.add("focus");
-    var hd = my$("hd");
-    hd.getElementsByClassName("section-hd")[1].style.display = "block";
-    hd.getElementsByClassName("section-hd")[0].style.display = "none";
+xuan();
 
-    /*var bd = my$("bd");
-    bd.getElementsByClassName("first")[0].style.display = "none";
-    bd.getElementsByClassName("hide")[0].style.display = "block";*/
+function hd() {
+    //获取id为hd的节点
+    var hdObj = my$("hd");
 
-    let x1 = my$("xuan1-yuantotot");
-    let x2 = my$("xuan2-yuantotot");
-    x1.className = 'show clearfix showNone';
-    x2.className = 'show clearfix showBlock';
+    let hdlet = "";
+    //获取hd里面的子节点
+    for (var i = 0; i < dataList.length; i++) {
+        hdlet += '<div class="section-hd '
+        if (i == 0) {
+            hdlet += 'show';
+        } else {
+            hdlet += 'hide';
+        }
+        hdlet += '" id="high' + i + '"><h4>' + dataList[i]["title"] + '</h4><span>（ 适合<em>' + dataList[i]["message"] + '</em> ）</span></div>'
+    }
+    hdObj.innerHTML = hdlet;
 }
-my$("xuan2").onclick = function () {
-    xuan2()
-};
 
-/*点击弹出按钮*/
-title1 = function (name) {
+hd();
+
+function clickTitle(obj) {
     var popBox = document.getElementById("popBox");
     var popLayer = document.getElementById("popLayer");
     popBox.style.display = "block";
     popLayer.style.display = "block";
 
-    let elementById = document.getElementById('popBoxTitle');
-    elementById.innerText = "高级版-" + name;
+    //获取id为popBox节点
+    var popTitle = my$("popBoxTitle");
+
+    var titleValue = document.getElementsByClassName("section-hd show")[0].firstChild.innerText;
+    popTitle.innerHTML = titleValue + " - " + obj.getAttribute("name");
+
+    my$("popBoxContent").innerHTML = obj.getAttribute("desc");
+
+};
+
+function circles(highList) {
+    var circlesList = [
+        {title: "标题1", icons: "iconfont icon-yinlewenjian", content: "1111111111级版高级版高级版高级版"},
+        {
+            title: "标题2",
+            icons: "iconfont icon-zhuanjiguangpan",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题3",
+            icons: "iconfont icon-kuzi",
+            content: "高级版高级版高3333333333333333高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题4",
+            icons: "iconfont icon-gouwu",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题5",
+            icons: "iconfont icon-yifu",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题6",
+            icons: "iconfont icon-yinlewenjian",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题7",
+            icons: "iconfont icon-zhuanjiguangpan",
+            content: "高级版7777777777777777级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题8",
+            icons: "iconfont icon-kuzi",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题9",
+            icons: "iconfont icon-gouwu",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        },
+        {
+            title: "标题10",
+            icons: "iconfont icon-yifu",
+            content: "高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版高级版"
+        }
+    ]
+
+    //获取id为bd节点
+    var bdObj = my$("circle-parent");
+
+    // 清空子节点
+    var childs = bdObj.childNodes;
+    for (var i = childs.length - 1; i >= 0; i--) {
+        bdObj.removeChild(childs[i]);
+    }
+
+    let bdlet = "";
+
+    //获取bd里面的子节点
+
+    for (var i = 0; i < circlesList.length; i++) {
+        bdlet += '<li id="' + i + '"><div '
+        if (!highList.includes(circlesList[i]["title"])) {
+            bdlet += 'class="first" ><div class="circle"'
+        } else {
+            bdlet += '><div class="circle" onclick="clickTitle(this)" name="' + circlesList[i]["title"] + '" desc="' + circlesList[i]["content"] + '"'
+        }
+        bdlet += '><i class="' + circlesList[i]["icons"] + '"></i></div><div class="section-title">' + circlesList[i]["title"] + '</div></div></li>'
+
+    }
+    bdObj.innerHTML = bdlet;
+
 
 }
 
-title2 = function (name) {
-    var popBox = document.getElementById("popBox");
-    var popLayer = document.getElementById("popLayer");
-    popBox.style.display = "block";
-    popLayer.style.display = "block";
+function swiperColor(id) {
+    // 切换隐藏box2选择项
+    document.getElementsByClassName("a focus")[0].className = "a";
+    my$("xuan" + id).className = "a focus";
 
-    let elementById = document.getElementById('popBoxTitle');
-    elementById.innerText = "定制版-" + name;
+    // 切换隐藏box3 hd选择项
+    document.getElementsByClassName("section-hd show")[0].className = "section-hd hide";
+    my$("high" + id).className = "section-hd show";
 
+    // 重新加载section-bd
+    circles(dataList[id]["circlesList"]);
 }
+
+
+// title1 = function(name) {
+//     var popBox = document.getElementById("popBox");
+//     var popLayer = document.getElementById("popLayer");
+//     popBox.style.display = "block";
+//     popLayer.style.display = "block";
+
+//     let elementById = document.getElementById('popBoxTitle');
+//     elementById.innerHTML = "定制版-" + name;
+
+// }
 
 /*点击关闭按钮*/
 my$("aClose").onclick = function () {
@@ -76,11 +202,10 @@ my$("aClose").onclick = function () {
 
 //url传参
 var code = getParam("code");
-if (code == 2) {
-    xuan2();
-} else {
-    xuan1();
+if (code == null || code < 0 || code >= dataList.length) {
+    code = 0
 }
+swiperColor(code)
 
 function getParam(paramName) {
     paramValue = "", isFound = !1;
@@ -90,3 +215,5 @@ function getParam(paramName) {
     }
     return paramValue == "" && (paramValue = null), paramValue
 }
+
+

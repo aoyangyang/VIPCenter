@@ -6,13 +6,6 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "76577",
-      "name": "叉子删除带边框",
-      "font_class": "chazishanchudaibiankuang",
-      "unicode": "e68e",
-      "unicode_decimal": 59022
-    },
-    {
       "icon_id": "444234",
       "name": "专辑，光盘",
       "font_class": "zhuanjiguangpan",
